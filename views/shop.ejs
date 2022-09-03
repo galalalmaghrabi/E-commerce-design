@@ -1,0 +1,134 @@
+<%- include('parts/head') %>
+  <%- include('parts/navbar') %>
+    <section class="container d-flex">
+      <div class="col-xl-4 col-lg-4 col-md-10 col-sm-10">
+        <div class="col-12 p-0">
+          <div class="wrapper category col-12">
+            <h3>CATEGORIES</h3>
+            <div class="col-12">
+              <a class="col-6">
+                Men
+              </a>
+              <span class="col-6">
+                (2,220)
+              </span>
+            </div>
+            <div class="col-12">
+              <a class="col-6">
+                Women
+              </a>
+              <span class="col-6">
+                (2,550)
+              </span>
+            </div>
+            <div class="col-12">
+              <a class="col-6">
+                Children
+              </a>
+              <span class="col-6">
+                (2,124)
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 wrapper">
+          <div class="">
+            <div>
+              <h2>Price Range</h2>
+              <p>Use slider or enter min and max price</p>
+            </div>
+            <div class="price-input">
+              <div class="field">
+                <span>Min</span>
+                <input type="number" class="input-min" value="2500">
+              </div>
+              <div class="separator">-</div>
+              <div class="field">
+                <span>Max</span>
+                <input type="number" class="input-max" value="7500">
+              </div>
+            </div>
+            <div class="sliderPrice">
+              <div class="progress"></div>
+            </div>
+            <div class="range-input">
+              <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
+              <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-4 mt-4 checkBox">
+              <h3 class="mb-3 h6 text-uppercase text-black d-block">Size</h3>
+              <label for="s_sm" class="d-flex">
+                <input type="checkbox" id="s_sm" class="mr-2 mt-1"> <span class="text-black">Small (2,319)</span>
+              </label>
+              <label for="s_md" class="d-flex">
+                <input type="checkbox" id="s_md" class="mr-2 mt-1"> <span class="text-black">Medium (1,282)</span>
+              </label>
+              <label for="s_lg" class="d-flex">
+                <input type="checkbox" id="s_lg" class="mr-2 mt-1"> <span class="text-black">Large (1,392)</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-12 colors">
+            <div class="mb-4 mt-4 col-12">
+              <h3 class="mb-3 h6 text-uppercase text-black d-block">Color</h3>
+              <a href="#" class="d-flex color-item align-items-center">
+                <span class="bg-danger color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Red
+                  (2,429)</span>
+              </a>
+              <a href="#" class="d-flex color-item align-items-center">
+                <span class="bg-success color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Green
+                  (2,298)</span>
+              </a>
+              <a href="#" class="d-flex color-item align-items-center">
+                <span class="bg-info color d-inline-block rounded-circle mr-2"></span> <span class="text-black">Blue
+                  (1,075)</span>
+              </a>
+              <a href="#" class="d-flex color-item align-items-center">
+                <span class="bg-primary color d-inline-block rounded-circle mr-2"></span> <span
+                  class="text-black">Purple (1,075)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-8 col-lg-8 col-md-10 col-sm-10 products">
+        <div class="col-12 d-flex" style="justify-content: space-between ;align-items:center ;margin: 50px 0px;">
+          <h2 style="font-size: 20px;">
+            Shop All
+          </h2>
+          <div class="filter">
+            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle btn-primary" id="dropdownMenuOffset"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Latest
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset" x-placement="bottom-start"
+              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 41px, 0px);">
+              <a class="dropdown-item" href="#">Men</a>
+              <a class="dropdown-item" href="#">Women</a>
+              <a class="dropdown-item" href="#">Children</a>
+            </div>
+          </div>
+        </div>
+        <div class="all-products col-12">
+          <% for(let item of products){ %>
+            <div class="product">
+              <a href="<%= item._id  %> ">
+                <img src="/<%= item.image  %> " alt="" srcset="">
+              </a>
+              <div class="content">
+                <a href="<%= item._id  %> ">
+                  <p><%= item.name  %>  </p>
+                </a>
+                <span><%= item.desc  %> </span>
+                <p>$<%= item.price %> </p>
+              </div>
+            </div>
+            <% } %>
+        </div>
+
+
+      </div>
+    </section>
+    <%- include('parts/footer') %>

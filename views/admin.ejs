@@ -1,0 +1,36 @@
+<%- include('parts/head') %>
+  <%- include('parts/navbar') %>
+    <div class="container  col-sm-12 cpl-md-12 col-lg-12 col-xl-12"
+      style="height: 100vh;display: flex;flex-direction: column;justify-content: center;align-items: center;background-color: rgba(128, 128, 128, 0.622);">
+      <form action="/admin" method="post" enctype="multipart/form-data" class="col-8" style="background-color: white ;padding-top: 20px;box-shadow: 0px 0px 5px 0px black;">
+        <div class="">
+          <div class="form-group col-12">
+            <label for="inputEmail4">name</label>
+            <input type="text" class="form-control col-12" id="inputEmail4" name="name">
+          </div>
+          <div class="form-group col-md-12 col-12 d-flex" style="flex-wrap: wrap;">
+            <input type="file" class="form-control col-12" id="inputPassword4" name="image">
+          </div>
+
+        </div>
+        <div class="form-group col-12">
+          <label for="inputAddress">description</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Enter description" name="desc">
+        </div>
+        <div class="form-group col-md-12">
+          <label for="inputState">category</label>
+          <select id="inputState" class="form-control" name="category">
+            <option value="all">all</option>
+            <option value="man">man</option>
+            <option value="woman">woman</option>
+            <option value="children">children</option>
+          </select>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputZip">price</label>
+          <input type="text" class="form-control" id="inputZip" name="price">
+        </div>
+        <button type="submit" class="btn btn-primary" style="height: 40px; margin-left: 20px;">Add</button>
+      </form>
+    </div>
+    <%- include('parts/footer') %>

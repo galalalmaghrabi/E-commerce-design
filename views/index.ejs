@@ -1,0 +1,122 @@
+<%- include('parts/head') %>
+  <%- include('parts/navbar') %>
+    <section class="banner container-fluid d-flex">
+      <div class=" col-12 row align-items-start align-items-md-center justify-content-end"
+        style="justify-content:end !important ;">
+        <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
+          <h1 class="mb-2" style="max-width: 320px ;font-weight: 700;font-size: 50px;line-height: 1.2;">Finding Your
+            Perfect Shoes</h1>
+          <div class="intro-text text-center text-md-left">
+            <p class="mb-4" style="max-width:460px ;font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
+            <p>
+              <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="services container">
+      <div class="col-xl-4 col-lg-4 col-md-5 col-sm-10">
+        <i class="fa-solid fa-truck"></i>
+        <div class="content">
+          <h2>FREE SHIPPING</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan
+            tincidunt fringilla.
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-5 col-sm-10">
+        <i class="fa-solid fa-arrow-rotate-right"></i>
+        <div class="content">
+          <h2>FREE RETURNS </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan
+            tincidunt fringilla.
+          </p>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-5 col-sm-10">
+        <i class="fa-solid fa-question"></i>
+        <div class="content">
+          <h2>CUSTOMER SUPPORT</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan
+            tincidunt fringilla.
+          </p>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section class="collections container col-12">
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-10">
+        <img src="/images/women.jpg" alt="">
+        <div class="content">
+          <span>collections</span>
+          <h2>Women</h2>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-10">
+        <img src="/images/children.jpg" alt="">
+        <div class="content">
+          <span>collections</span>
+          <h2>children</h2>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-5 col-sm-10">
+        <img src="/images/men.jpg" alt="">
+        <div class="content">
+          <span>collections</span>
+          <h2>men</h2>
+        </div>
+      </div>
+    </section>
+    <section class="featured container-fluid">
+      <h1>
+        Featured Products
+      </h1>
+      <div class="container col-12">
+        <div class="parent-slider" id="slider">
+          <% for(let item of items){ %>
+            <div class="slideItem slide">
+            <a href="<%= item._id  %> ">
+              <img src="/<%= item.image  %>" alt="" srcset="">
+            </a>
+            <div class="content">
+              <a href="<%= item._id  %>">
+                <p><%= item.name  %></p>
+              </a>
+              <span><%= item.desc  %></span>
+              <p>$<%= item.price  %></p>
+            </div>
+          </div>
+          <% } %> 
+
+        </div>
+        <div class="arrow-icons">
+          <i class="fa-solid fa-arrow-left" onclick="sliderFunction('left')"></i>
+          <i class="fa-solid fa-arrow-right" onclick="sliderFunction('right')"></i>
+        </div>
+      </div>
+    </section>
+    <section class="bigSale container col-12">
+      <h1>
+        Big Sale!
+      </h1>
+      <div class="container mt-2 mb-3">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-10">
+          <img src="/images/blog_1.jpg" alt="" srcset="">
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-10 text-center pl-md-5">
+          <h2><a href="#">50% less in all items</a></h2>
+          <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">•</span> September 3, 2018
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis
+            ipsum animi deleniti fugiat. Ex, veniam?</p>
+          <p><a href="#" class="btn btn-primary btn-sm">Shop Now</a></p>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <%- include('parts/footer') %>

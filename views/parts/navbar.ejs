@@ -1,0 +1,88 @@
+<nav class="container d-flex">
+    <div class="col-4 search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="search">
+    </div>
+    <div class="col-4">
+        <h1><a href="/">Almaghrabi</a></h1>
+    </div>
+    <div class="col-4 nav-icons">
+        <a href="/login">
+            <i class="fa-solid fa-user"></i>
+        </a>
+        <a href="">
+            <i class="fa-solid fa-heart"></i>
+        </a>
+        <a href="/cart" class="count-items">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+        <% if(isUser){ %>
+            <a>
+                <form action="/logout" method="post ml-1">
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+            </a>
+            <% } %>
+    </div>
+</nav>
+<hr>
+<header>
+    <ul class="parent-links">
+        <li class="ml-4 mr-4 parent-home-link">
+            <a href="/" class="home-link">
+                HOME
+            </a>
+            <i class="fa-solid fa-caret-down"></i>
+            <div class="drop-slide">
+                <ul>
+                    <li>
+                        <a href="">Menu One</a>
+                    </li>
+                    <li>
+                        <a href="">Menu Two</a>
+                    </li>
+                    <li>
+                        <a href="">Menu Three</a>
+                    </li>
+                    <li class="menu-four">
+                        <a href="">Menu Four</a>
+                        <i class="fa-solid fa-caret-down"></i>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="">Menu One</a>
+                                </li>
+                                <li>
+                                    <a href="">Menu Two</a>
+                                </li>
+                                <li>
+                                    <a href="">Menu Three</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="ml-4 mr-4">
+            <a href="/">ABOUT</a>
+        </li>
+        <li class="ml-4 mr-4">
+            <a href="/shop">SHOP</a>
+        </li>
+        <li class="ml-4 mr-4">
+            <a href="/">CATALOGUE</a>
+        </li>
+        <li class="ml-4 mr-4">
+            <a href="/">NEW ARRIVALS</a>
+        </li>
+        <li class="ml-4 mr-4">
+            <a href="/">CONTACT</a>
+        </li>
+        <% if(isAdmin){ %>
+            <li class="ml-4 mr-4">
+                <a href="/admin">ADMIN</a>
+            </li>
+            <% } %>
+    </ul>
+</header>

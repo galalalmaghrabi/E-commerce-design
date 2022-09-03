@@ -1,0 +1,33 @@
+<%- include('parts/head') %>
+  <%- include('parts/navbar') %>
+    <section class="login-page container d-flex">
+      <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+        <form action="/login" method="post">
+          <h2>Login</h2>
+          <span>
+            Enter Login details to get access
+          </span>
+          <div class="form-group">
+            <label for="email">
+              Username Or Email Address
+            </label>
+            <input type="email" id="email" name="email" placeholder="Username Or Email Address" required min="8">
+          </div>
+          <div class="form-group">
+            <label for="password">
+              Password
+            </label>
+            <input type="password" id="password" name="password" placeholder="Password" required min="5">
+          </div>
+          <div class="signup-link">
+            <p>
+              Don’t have an account?
+               <a href="/register">Sign Up</a>
+              here
+            </p>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <%- include('parts/footer') %>
